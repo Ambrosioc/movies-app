@@ -6,6 +6,7 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
 	const [movies, setMovies] = useState([]);
+
 	return (
 		<>
 			<Routes>
@@ -13,7 +14,7 @@ function App() {
 					path="/"
 					element={<Home movies={movies} setMovies={setMovies} />}
 				/>
-				<Route path={"/movie/:id"} element={<MovieInfos movies={movies} />} />
+				<Route path={"/movies/:id"} element={<MovieInfos movies={movies} />} />
 				<Route path="*" element={<h1>Not Found</h1>} />
 			</Routes>
 		</>
