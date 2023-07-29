@@ -18,6 +18,11 @@ export default function MovieInfos({ movies }) {
 		<div>
 			<div
 				style={{
+					backgroundImage: `url(${movie.Poster})`,
+					backgroundSize: "cover",
+					backgroundPosition: "center",
+					boxShadow: "inset 0 0 0 1000px rgba(0,0,0,0.8)",
+					height: "100vh",
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
@@ -37,8 +42,8 @@ export default function MovieInfos({ movies }) {
 					<p>{movie.Year}</p>
 					<p>{movie.Type}</p>
 				</div>
+				<Button children="Back" handlClick={handlClick} />
 			</div>
-			<Button children="Back" handlClick={handlClick} />
 		</div>
 	);
 }
