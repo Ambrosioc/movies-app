@@ -1,15 +1,15 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Button from "./Button";
 
 export default function MovieCard({ movie }) {
-	// const navigate = useNavigate();
-
+	const navigate = useNavigate();
+	function handlClick() {
+		console.log(movie.imdbID);
+		navigate(`/movie/${movie.imdbID}`);
+	}
 	return (
-		<div
-			className="movie"
-			onClick={() => {
-				console.log(movie);
-			}}>
+		<div className="movie">
 			<div>
 				<p>{movie.Year}</p>
 			</div>
@@ -26,6 +26,8 @@ export default function MovieCard({ movie }) {
 			<div>
 				<span>{movie.Type}</span>
 				<h3>{movie.Title}</h3>
+				<br />
+				<Button children="View Detail" handlClick={handlClick} />
 			</div>
 		</div>
 	);
