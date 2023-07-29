@@ -1,55 +1,49 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import MovieCard from "./MovieCard";
+import MovieCard from "./components/MovieCard";
 import SearchIcon from "./search.svg";
-
-// c17d686d
-const API_URL = "https://www.omdbapi.com/?i=tt3896198&apikey=c17d686d";
+import { getMovieRequest } from "./services/api/movieApi";
 
 function App() {
-  const [movies, setMovies] = useState([]);
-  const [searchValue, setSearchValue] = useState("");
+	const [searchValue, setSearchValue] = useState("");
+	const [movies, setMovies] = useState([]);
 
-  const getMovieRequest = async (searchValue) => {
-    const url = `${API_URL}&s=${searchValue}`;
+	useEffect(() => {
+		getMovieRequest(searchValue)
+			.then((data) => {
+				if (data.Search) {
+					setMovies(data.Search);
+					console.log(movies);
+				}
+			})
+			.catch((error) => console.log(error));
+	}, [searchValue]);
 
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
-    if (data.Search) {
-      setMovies(data.Search);
-    }
-  };
-
-  useEffect(() => {
-    getMovieRequest(searchValue);
-  }, [searchValue]);
-
-  return (
-    <div className="app">
-      <h1>MovieLand</h1>
-      <div className="search">
-        <input
-          type="text"
-          placeholder="Search for a movie..."
-          value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
-        />
-        <img
-          src={SearchIcon}
-          alt="search-icon"
-          onClick={() => getMovieRequest(searchValue)}
-        />
-      </div>
-      <div className="container">
-        {movies?.length > 0 ? (
-          movies.map((movie, index) => <MovieCard key={index} movie={movie} />)
-        ) : (
-          <h2>No movies founds</h2>
-        )}
-      </div>
-    </div>
-  );
+	return (
+		<div className="app">
+			<h1>MovieLand</h1>
+			<div className="search">
+				<input
+					type="text"
+					placeholder="Search for a movie..."
+					value={searchValue}
+					onChange={(e) => setSearchValue(e.target.value)}
+				/>
+				<img
+					src={SearchIcon}
+					alt="search-icon"
+					onClick={() => getMovieRequest(searchValue)}
+				/>
+			</div>
+			<div className="container">
+				{movies?.length > 0 ? (
+					movies.map((movie, index) => <MovieCard key={index} movie={movie} />)
+				) : (
+					<h2>No movies founds</h2>
+				)}
+			</div>
+		</div>
+	);
 }
 
 export default App;
