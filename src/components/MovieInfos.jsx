@@ -39,11 +39,17 @@ export default function MovieInfos({ movies }) {
 
 				<div>
 					<h1>{movie.Title}</h1>
-					<p>{movie.Year}</p>
-					<p>{movie.Type}</p>
+					<h1 style={styles.p}>{movie.Year}</h1>
+					<h1 style={styles.p}>{movie.Type}</h1>
 				</div>
 				<Button children="Back" handlClick={handlClick} />
 			</div>
 		</div>
 	);
 }
+
+const styles = {
+	p: {
+		color: "white",
+	},
+};
