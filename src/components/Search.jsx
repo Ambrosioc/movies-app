@@ -11,7 +11,7 @@ export default function Search({ searchValue, setSearchValue, setMovies }) {
 				}
 			})
 			.catch((error) => console.log(error));
-	}, [searchValue]);
+	}, [searchValue, setMovies]);
 	return (
 		<div className="search">
 			<input

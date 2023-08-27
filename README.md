@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Projet d'Application de Films en React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ce projet est une application de films développée en utilisant React et en exploitant l'API [OMDB](https://www.omdbapi.com) pour obtenir des informations sur les films. L'application permet aux utilisateurs de rechercher des films, d'afficher des détails sur chaque film et d'explorer une variété de contenus cinématographiques.
 
-## Available Scripts
+## Fonctionnalités Principales
 
-In the project directory, you can run:
+- **Recherche de Films :** Les utilisateurs peuvent effectuer des recherches de films en entrant des mots-clés, et les résultats correspondants sont affichés en temps réel.
 
-### `npm start`
+- **Détails des Films :** Chaque film affiche des informations telles que le titre, l'année de sortie, les acteurs, le réalisateur, le résumé et la note.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Navigation Multi-Pages :** L'application utilise `react-router-dom` pour créer une navigation fluide entre différentes pages, notamment la page de recherche et la page de détails du film.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Capture d'Écran
 
-### `npm test`
+![Capture d'écran de l'application de films](src/assets/img/screenshot.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Mise en Route
 
-### `npm run build`
+1. Clonez ce dépôt sur votre machine locale.
+2. Installez les dépendances en utilisant la commande `yarn install`.
+3. Obtenez une clé API OMDB en vous inscrivant sur [OMDB API](https://www.omdbapi.com) et remplacez-la dans le code.
+4. Lancez l'application avec `yarn start`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Ressources Utilisées
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [API OMDB](https://www.omdbapi.com) pour l'accès aux informations sur les films.
+- [React](https://reactjs.org/) pour la création de l'interface utilisateur interactive.
+- [react-router-dom](https://reactrouter.com/web/guides/quick-start) pour la gestion de la navigation multi-pages.
+- [Yarn](https://yarnpkg.com/) comme gestionnaire de paquets.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributions
 
-### `npm run eject`
+Les contributions sont les bienvenues ! Si vous souhaitez ajouter des fonctionnalités, améliorer l'interface utilisateur ou optimiser le code, n'hésitez pas à soumettre une demande d'extraction.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ce projet a été créé par [CAZIMIRA Ambrosie](https://github.com/Ambrosioc) pour mettre en pratique les compétences en développement React, en utilisation d'API et en gestion de l'état global. L'application de films est destinée à illustrer comment créer une expérience interactive pour les amateurs de cinéma.

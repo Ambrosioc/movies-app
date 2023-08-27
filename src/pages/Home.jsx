@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import Search from "../components/Search";
 import MovieCard from "../components/MovieCard";
 import { useFetch } from "../utils/hooks";
-
-const URL_2 = "https://www.omdbapi.com/?i=tt3896198&apikey=c17d686d";
+import { API_URL } from "../services/api/movieApi";
 
 export default function Home({ movies, setMovies }) {
 	const [searchValue, setSearchValue] = useState("");
 
-	const { data, error, isLoading } = useFetch(URL_2);
-	console.log(data, movies);
+	const { data, error, isLoading } = useFetch(API_URL);
 
 	if (isLoading) {
 		return <h2>Loading...</h2>;
