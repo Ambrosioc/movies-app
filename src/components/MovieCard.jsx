@@ -1,11 +1,11 @@
 import React from "react";
-
 import { useNavigate } from "react-router-dom";
 import Button from "./Button";
 
 export default function MovieCard({ movie }) {
 	const navigate = useNavigate();
 	const param = movie.imdbID;
+	
 
 	function handlClick() {
 		navigate(`/movies/${param}`);

@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import Search from "../components/Search";
 import MovieCard from "../components/MovieCard";
-import { useFetch } from "../utils/hooks";
+import Search from "../components/Search";
 import { API_URL } from "../services/api/movieApi";
+import { useFetch } from "../utils/hooks";
 
 export default function Home({ movies, setMovies }) {
 	const [searchValue, setSearchValue] = useState("");
-
 	const { data, error, isLoading } = useFetch(API_URL);
 
 	if (isLoading) {
@@ -44,7 +43,7 @@ export default function Home({ movies, setMovies }) {
 				{movies?.length > 0 ? (
 					movies.map((movie, index) => <MovieCard key={index} movie={movie} />)
 				) : (
-					<h2>No movies founds</h2>
+					<h2>...</h2>
 				)}
 			</div>
 		</div>
